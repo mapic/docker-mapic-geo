@@ -19,41 +19,41 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server mysql-client 
 
 # install graphics magick
 RUN echo "Installing Graphics Magick"
-ADD ./install-graphicsmagick.sh /tmp/install-graphicsmagick.sh > /dev/null
+ADD ./install-graphicsmagick.sh /tmp/install-graphicsmagick.sh 
 RUN sh /tmp/install-graphicsmagick.sh > /dev/null
 
 # install phantom-js
 RUN echo "Installing PhantomJS"
-ADD ./install-phantomjs.sh /tmp/install-phantomjs.sh > /dev/null
+ADD ./install-phantomjs.sh /tmp/install-phantomjs.sh
 RUN sh /tmp/install-phantomjs.sh > /dev/null
 
 # install gdal
 RUN echo "Installing Gdal"
-ADD ./install-gdal.sh /tmp/install-gdal.sh > /dev/null
+ADD ./install-gdal.sh /tmp/install-gdal.sh 
 RUN bash /tmp/install-gdal.sh > /dev/null
 
 # install boost
 RUN echo "Installing Boost"
-ADD ./install-boost.sh /tmp/ > /dev/null
+ADD ./install-boost.sh /tmp/ 
 RUN bash /tmp/install-boost.sh > /dev/null
 
 # install harfbuzz
 RUN echo "Installing Harfbuzz"
-ADD ./install-harfbuzz.sh /tmp/ > /dev/null
+ADD ./install-harfbuzz.sh /tmp/ 
 RUN bash /tmp/install-harfbuzz.sh > /dev/null
 
 # install mapnik
 RUN echo "Installing Mapnik"
-ADD ./install-mapnik.sh /tmp/ > /dev/null
+ADD ./install-mapnik.sh /tmp/
 RUN bash /tmp/install-mapnik.sh > /dev/null
 
 # # install yarn
 RUN echo "Installing Yarn"
-# ADD ./install-yarn.sh /tmp/ > /dev/null
+# ADD ./install-yarn.sh /tmp/ 
 # RUN bash /tmp/install-yarn.sh > /dev/null
 
 
-RUN rm /etc/apt/sources.list.d/* > /dev/null
+RUN rm /etc/apt/sources.list.d/* 
 RUN apt-get clean > /dev/null
 
 # install postgis
