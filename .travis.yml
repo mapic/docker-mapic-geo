@@ -1,0 +1,9 @@
+language: generic
+services:
+  - docker
+install:
+  - docker build -t mapic/geo .
+  - docker run -d --name geo mapic/geo htop
+script:
+  - docker ps | grep -q geo
+  
