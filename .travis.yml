@@ -2,7 +2,7 @@ language: generic
 services:
   - docker
 install:
-  - docker build -t mapic/geo .
+  - docker build -t mapic/geo . > /dev/null
   - docker run -d --name geo mapic/geo htop
 script:
   - docker ps | grep -q geo
