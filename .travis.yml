@@ -1,7 +1,7 @@
 language: generic
 services:
   - docker
-install: travis_wait 240 docker build -t mapic/geo . > /dev/null
+install: travis_wait 240 docker build -t mapic/geo .
 script:
   - docker run -d --name geo mapic/geo htop
   - docker ps | grep -q geo
