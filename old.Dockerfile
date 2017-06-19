@@ -42,10 +42,10 @@ RUN echo "Installing Harfbuzz"
 ADD ./install-harfbuzz.sh /tmp/ 
 RUN bash /tmp/install-harfbuzz.sh > /dev/null
 
-# # install mapnik
-# RUN echo "Installing Mapnik"
-# ADD ./install-mapnik.sh /tmp/
-# RUN bash /tmp/install-mapnik.sh > /dev/null
+# install mapnik
+RUN echo "Installing Mapnik"
+ADD ./install-mapnik.sh /tmp/
+RUN bash /tmp/install-mapnik.sh > /dev/null
 
 # # install yarn
 RUN echo "Installing Yarn"
